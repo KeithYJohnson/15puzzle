@@ -33,9 +33,7 @@ function handleTileClick(tile){
     shifted = shiftPuzzleArray(tile_row, id, value)
     rows[row_idx] = shifted
 
-    TILES = rows.reduce(function(a, b) {
-        return a.concat(b);
-    }, []);
+    TILES = rows.flatten()
 
   } else if (tile_column.indexOf("_") > -1) {
     shifted = shiftPuzzleArray(tile_column, id, value)
@@ -74,10 +72,7 @@ function shiftPuzzleArray(array, id, value) {
     shifted.push("_")
     shifted.push(doesnt_move)
 
-    // Flatten the array.
-    return shifted.reduce(function(a, b) {
-      return a.concat(b);
-    }, []);
+    return shifted.flatten()
 
   } else {
     shifted = []
@@ -93,9 +88,7 @@ function shiftPuzzleArray(array, id, value) {
     shifted.push(after_empty)
 
     // Flatten the array.
-    return shifted.reduce(function(a, b) {
-      return a.concat(b);
-    }, []);
+    return shifted.flatten()
   }
 }
 
