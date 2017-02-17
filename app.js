@@ -25,6 +25,7 @@ function handleTileClick(tile){
   row_idx   = row_thing[1]
 
   columns      = asColumns(TILES)
+  // q.V. previous comment
   column_thing = getContainingArray(asColumns(TILES), value)
   tile_column  = column_thing[0]
   column_idx   = column_thing[1]
@@ -53,7 +54,6 @@ function handleTileClick(tile){
 
   drawTiles(TILES)
 }
-
 
 function shiftPuzzleArray(array, id, value) {
   value = parseInt(value)
